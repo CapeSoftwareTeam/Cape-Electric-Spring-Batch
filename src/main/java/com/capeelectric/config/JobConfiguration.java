@@ -62,12 +62,13 @@ public class JobConfiguration {
 					register.setCreatedBy("sd@capeindia.net");
 					register.setUpdatedDate(LocalDateTime.now());
 					register.setUpdatedBy(user.getUsername());
+					//register.setSiteName("Site");
 					
 					if (user.getEmail().contains("@capeindia.net")) {
 						register.setUsername(user.getEmail());
 						register.setAddress(" A-41B, SIPCOT Industrial Growth Centre Sriperumbudur Taluk, Oragaram");
 						register.setPinCode("602105");
-						register.setNoOfLicence("5");
+						register.setNoOfLicence("0");
 						register.setRole("INSPECTOR");
 
 					} else if (user.getEmail().contains("@gmail.com")) {

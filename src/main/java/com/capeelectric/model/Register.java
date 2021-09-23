@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Register_tbl")
+@Table(name = "register_table")
 public class Register{
 
 	@Id
@@ -90,6 +90,9 @@ public class Register{
 	
 	@Column(name = "UPDATED_BY")
 	private String updatedBy;
+	
+	@Column(name = "SITE_NAME")
+	private String siteName;
 
 	public Integer getRegisterId() {
 		return registerId;
@@ -290,5 +293,14 @@ public class Register{
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
+	public String getSiteName() {
+		return siteName;
+	}
+
+	public void setSiteName(String siteName) {
+		this.siteName = siteName;
+	}
+	
 	
 }

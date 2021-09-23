@@ -91,8 +91,8 @@ public class Register{
 	@Column(name = "UPDATED_BY")
 	private String updatedBy;
 	
-	@Column(name = "SITE_NAME")
-	private String siteName;
+//	@Column(name = "SITE_NAME")
+//	private String siteName;
 
 	public Integer getRegisterId() {
 		return registerId;
@@ -294,13 +294,13 @@ public class Register{
 		this.country = country;
 	}
 
-	public String getSiteName() {
-		return siteName;
-	}
-
-	public void setSiteName(String siteName) {
-		this.siteName = siteName;
-	}
+//	public String getSiteName() {
+//		return siteName;
+//	}
+//
+//	public void setSiteName(String siteName) {
+//		this.siteName = siteName;
+//	}
 	
 	
 }

@@ -71,7 +71,7 @@ public class JobConfiguration {
 						register.setNoOfLicence("0");
 						register.setRole("INSPECTOR");
 
-					} else if (user.getEmail().contains("@gmail.com")) {
+					} else {
 						register.setUsername(user.getEmail());
 						register.setAddress("K.K. Nagar ,Chennai");
 						register.setPinCode("600 008");

@@ -74,7 +74,8 @@ public class JobConfiguration {
 					} else {
 						register.setUsername(user.getEmail());
 						register.setAddress("K.K. Nagar ,Chennai");
-						register.setPinCode("600 008");
+						register.setPinCode("600 078");
+						register.setNoOfLicence("0");
 						register.setRole("VIEWER");
 						register.setAssignedBy("sd@capeindia.net");
 					}

@@ -27,7 +27,6 @@ public class UserRowMapper implements RowMapper<User> {
 				.username(rs.getString("user_name"))
 				.creationdate(LocalDateTime.parse(rs.getString("creation_date"), DT_FORMAT))
 				.updateddate(LocalDateTime.parse(rs.getString("updated_date"), DT_FORMAT))
-				
 				.build(); 
  	}
 	

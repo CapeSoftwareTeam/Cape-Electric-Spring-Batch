@@ -1,6 +1,7 @@
 package com.capeelectric.config;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -48,39 +49,51 @@ public class JobConfiguration {
 	public ItemWriter<? super User> customerItemWriter() {
 		return items -> {
 			for (User user : items) {
-				if (user != null && user.getEmail() != null) {
-					register = new Register();
-					register.setRegisterId(user.getId());
-					register.setName(user.getFirstname() + user.getLastname());
-					register.setState("Tamil Nadu");
-					register.setDistrict("Chennai");
-					register.setPassword(user.getPassword());
-					register.setCountry("India");
-					register.setPermission("YES");
-					register.setPermissionBy("sd@capeindia.net");
-					register.setCreatedDate(user.getCreationdate());
-					register.setCreatedBy("sd@capeindia.net");
-					register.setUpdatedDate(LocalDateTime.now());
-					register.setUpdatedBy(user.getUsername());
-					//register.setSiteName("Site");
-					
-					if (user.getEmail().contains("@capeindia.net")) {
-						register.setUsername(user.getEmail());
-						register.setAddress(" A-41B, SIPCOT Industrial Growth Centre Sriperumbudur Taluk, Oragaram");
-						register.setPinCode("602105");
-						register.setNoOfLicence("0");
-						register.setRole("INSPECTOR");
+					if (user != null && user.getEmail() != null ) {
+						register = new Register();
+						register.setRegisterId(user.getId());
+						register.setName(user.getFirstname() + user.getLastname());
+						register.setState("Tamil Nadu");
+						register.setPassword(user.getPassword());
+						register.setCountry("India");
+						register.setPermission("YES");
+						register.setPermissionBy("sd@capeindia.net");
+						register.setCreatedDate(user.getCreationdate());
+						register.setCreatedBy("sd@capeindia.net");
+						register.setUpdatedDate(LocalDateTime.now());
+						register.setUpdatedBy(user.getUsername());
+						//register.setSiteName("Site");
+						
+						if (user.getEmail().contains("@capeindia.net")) {
+							register.setUsername(user.getEmail());
+							register.setAddress(" A-41B, SIPCOT Industrial Growth Centre Sriperumbudur Taluk, Oragaram");
+							register.setPinCode("602105");
+							register.setNoOfLicence("0");
+							register.setRole("INSPECTOR");
+							register.setDepartment("Department");
+							register.setDesignation("Inspector");
+							register.setDistrict("Kanchipuram");
+							register.setCompanyName("Cape Electric India Pvt Ltd");
+							register.setContactNumber("+91-44-71018121");
+							register.setApplicationType("LV Systems");
 
-					} else {
-						register.setUsername(user.getEmail());
-						register.setAddress("K.K. Nagar ,Chennai");
-						register.setPinCode("600 078");
-						register.setNoOfLicence("0");
-						register.setRole("VIEWER");
-						register.setAssignedBy("sd@capeindia.net");
+						} else {
+							register.setUsername(user.getEmail());
+							register.setAddress("K.K. Nagar ,Chennai");
+							register.setPinCode("600078");
+							register.setNoOfLicence("0");
+							register.setRole("VIEWER");
+							register.setAssignedBy("sd@capeindia.net");
+							register.setDepartment("Department");
+							register.setDesignation("Viewer");
+							register.setDistrict("Chennai");
+							register.setCompanyName("Company");
+							register.setContactNumber("+91-44-44444444");
+							register.setApplicationType("LV Systems");
+						}
+						registerRepository.save(register);
 					}
-					registerRepository.save(register);
-				}
+				
 			}
 		};
 	}
